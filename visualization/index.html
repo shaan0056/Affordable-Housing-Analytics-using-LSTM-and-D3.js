@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <title>CSE 6242 (Team 51) - Zillow Affordability</title>
+  <script src='libs/moment.min.js'></script>
+  <script src='libs/d3.v3.min.js'></script>
+  <script src='libs/topojson.v1.min.js'></script>
+  <script src='libs/d3.tip.v0.6.3.js'></script>
+  <script src='libs/d3-queue.v3.min.js'></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="buttons.css" />
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+  <script src='visualization.js'></script>
+  <div id='container'>
+    <h1>US Home Affordability</h1>
+    <br />
+    <div class="row justify-content-center" id="load-spinner">
+      <div class="loader"></div>
+    </div>
+    <div class="row">
+      <div id="date-slider"></div>
+    </div>
+    <div class="row obj-hidden" id="ui-buttons">
+      <div class="col-md-5">
+        <fieldset>
+          <span class="toggle">
+            <input type="radio" name="dataSource" value="state" id="state" checked="checked" onclick="onStateButtonClick()"/>
+            <label for="state">State</label>
+            <input type="radio" name="dataSource" value="county" id="county" onclick="onCountyButtonClick()"/>
+            <label for="county">County</label>
+          </span>
+        </fieldset>
+      </div>
+
+      <div class="col-md-7">
+        <fieldset>
+          <span class="toggle">
+            <input type="radio" name="dataType" value="foreclosures" id="foreclosures" onclick="onForeclosureRateButtonClick()"/>
+            <label for="foreclosures">Foreclosure Rates</label>
+            <input type="radio" name="dataType" value="median" id="medianPrices" checked="checked" onclick="onMedianPricesButtonClick()"/>
+            <label for="medianPrices">Median Prices</label>
+            <input type="radio" name="dataType" value="affordability" id="affordability" onclick="onAffordabilityButtonClick()"/>
+            <label for="affordability">Affordability</label>
+          </span>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-md-8 offset-md-2" id="slider-container"></div>
+    </div>
+
+    <div id="affordability-income" class="affordability-hidden">
+      <label>Net Income:</label>
+      <input name="netIncome" type="number" placeholder="75000" onInput="onNetIncomeChange()" id='netIncome'></input>
+    </div>
+
+    <div class="row no-gutters">
+      <div class="col-md-3 col-12" id="mini-graph-container"></div>
+      <div class="col-md-9 col-12" id="map-container"></div>
+  </div>
+
+</body>
+</html>
