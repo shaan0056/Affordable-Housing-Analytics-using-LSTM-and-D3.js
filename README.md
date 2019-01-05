@@ -1,5 +1,5 @@
-# cse6242 Group Project
-Project CSE 6242 - Team 51 (Affordable Housing Analytics) 
+# CSE6242 Group Project
+### Project CSE 6242 - Team 51 (Affordable Housing Analytics) 
 ### Grant Windes, Santhanu Venugopal Sunitha, Yuanshan (Tracy) Hu, Nicholas Kousen, Manoj Mohanan Nair
 ### Georgia Institute of Technology	 
 
