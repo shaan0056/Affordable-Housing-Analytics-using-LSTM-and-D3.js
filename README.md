@@ -1,4 +1,4 @@
-# cse6242-project
+# cse6242 Group Project
 Project CSE 6242 - Team 51 (Affordable Housing Analytics) 
 
 # Project Description
