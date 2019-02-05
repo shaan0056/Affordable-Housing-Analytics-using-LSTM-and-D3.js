@@ -36,7 +36,7 @@ pytz 2018.7 <br />
 six 1.11.0 <br />
 scikit-learn 0.20.0 <br />
 tensorflow 1.11.0 <br />
-kera 2.2.4 <br />
+keras 2.2.4 <br />
 matplotlib 3.0.0 <br />
 
 #### Javascript
